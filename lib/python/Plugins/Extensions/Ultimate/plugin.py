@@ -24,12 +24,11 @@ from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop
 from Tools.Directories import *
 from Tools.LoadPixmap import LoadPixmap
-from Plugins.Extensions.WeatherPlugin.plugin import MSNWeatherPlugin
+from Plugins.Extensions.WeatherPlugin.setup import MSNWeatherPluginEntriesListConfigScreen
 from Tools import Notifications
 from os import listdir, remove, rename, system, path, symlink, chdir, makedirs, mkdir
 import shutil
 cur_skin = config.skin.primary_skin.value.replace('/skin.xml', '')
-
 # Atile
 config.plugins.AtileHDB = ConfigSubsection()
 
@@ -53,7 +52,6 @@ def isInteger(s):
 		return True
 	except ValueError:
 		return False
-
 
 class AtileHDB_Config(Screen, ConfigListScreen):
 
@@ -82,10 +80,9 @@ class AtileHDB_Config(Screen, ConfigListScreen):
 		self['lab12'] = Label(_('Weather Setup .... Press Menu Button to get to the weather plugin'))
 		self['lab13'] = Label(_('Help, Skin settings(Weather, Own user logo )'))
 		self.start_skin = config.skin.primary_skin.value
-
 		if self.start_skin != "skin.xml":
 			self.getInitConfig()
-		
+
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 
@@ -128,7 +125,6 @@ class AtileHDB_Config(Screen, ConfigListScreen):
 		else:
 			self.default_center_file = "center_Original.xml"
 			self.default_color_file = "colors_Original.xml"
-
 		self.default_infobar_file = "infobar_Original.xml"
 		self.default_sib_file = "sib_Original.xml"
 		self.default_ch_se_file = "ch_se_Original.xml"
@@ -296,7 +292,7 @@ class AtileHDB_Config(Screen, ConfigListScreen):
 		else:
 			self["key_yellow"].setText("")
 	def config(self):
-		self.session.open(MSNWeatherPlugin)
+		self.session.open(MSNWeatherPluginEntriesListConfigScreen)
 
 
 	def changedEntry(self):

@@ -1,4 +1,4 @@
-AC_INIT([enigma2],[7.0],[http://www.droidsat.org])
+AC_INIT([enigma2],[7.0],[https://droidsat.org])
 AM_INIT_AUTOMAKE([dist-bzip2 no-define tar-pax -Wno-portability])
 AC_CONFIG_HEADERS([enigma2_config.h])
 
@@ -658,7 +658,7 @@ if test "$BOXTYPE" == "xc7362" -o "$BOXTYPE" == "xc7346" -o "$BOXTYPE" == "xc743
 	AC_DEFINE(KEY_MEDIA_TO_KEY_LIST, 1,[define MEDIA to LIST])
 fi
 
-if test "$BOXTYPE" == "osnino" -o "$BOXTYPE" == "osninoplus" -o "$BOXTYPE" == "osninopro" -o "$BOXTYPE" == "osmio4k" -o "$BOXTYPE" == "osmio4kplus"; then
+if test "$BOXTYPE" == "osnino" -o "$BOXTYPE" == "osninoplus" -o "$BOXTYPE" == "osninopro" -o "$BOXTYPE" == "osmio4k" -o "$BOXTYPE" == "osmio4kplus" -o "$BOXTYPE" == "osmini4k"; then
 	AC_DEFINE(KEY_MEDIA_TO_KEY_LIST, 1,[define MEDIA to LIST])
 	AC_DEFINE(KEY_VIDEO_TO_KEY_ANGLE, 1,[define VIDEO to ANGLE])
 fi
@@ -907,8 +907,6 @@ lib/python/Plugins/Makefile
 lib/python/Plugins/Extensions/Makefile
 lib/python/Plugins/Extensions/AtileHD/Makefile
 lib/python/Plugins/Extensions/AtileHD/pic/Makefile
-lib/python/Plugins/Extensions/AtileHDB/Makefile
-lib/python/Plugins/Extensions/AtileHDB/pic/Makefile
 lib/python/Plugins/Extensions/CutListEditor/Makefile
 lib/python/Plugins/Extensions/CutListEditor/meta/Makefile
 lib/python/Plugins/Extensions/DVDBurn/Makefile
