@@ -12,7 +12,6 @@ from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN, SCOPE_CURRENT_SKIN, fileExists
 from Tools.GetEcmInfo import GetEcmInfo
 from Components.Sources.StaticText import StaticText
-from OPENDROID.OscamSmartcard import *
 import os
 import enigma
 from ServiceReference import ServiceReference
@@ -322,7 +321,8 @@ class ShowSoftcamPackages(Screen):
 			"ok": self.go,
 			"cancel": self.exit,
 			"green": self.startupdateList,
-			"yellow": self.oscamsmartcard,
+			"yellow": self.startupdateList,
+			
 		}, -1)
 		
 		self.list = []
@@ -331,7 +331,7 @@ class ShowSoftcamPackages(Screen):
 		self["key_red"] = Label(_("Close"))
 		self["key_green"] = Label(_("Reload"))
 		self["key_ok"] = Label(_("Install"))
-		self["key_yellow"] = Label(_("oscamsmartcard"))
+		self["key_yellow"] = Label(_("Reload"))		
 		self.oktext = _("\nPress OK on your remote control to continue.")
 		self.onShown.append(self.setWindowTitle)
 		self.setStatus('list')
@@ -369,9 +369,6 @@ class ShowSoftcamPackages(Screen):
 		
 	def exit(self):
 		self.close()
-
-	def oscamsmartcard(self):
-		self.session.open(OscamSmartcard)
 			
 	def setWindowTitle(self):
 		self.setTitle(_("Install Softcams"))

@@ -4004,36 +4004,8 @@ class InfoBarAudioSelection:
 		if not hasattr(self, "LongButtonPressed"):
 			self.LongButtonPressed = False
 		if not self.LongButtonPressed:
-			if config.plugins.OPDBoot_yellowkey.list.value == '0':
-				from Screens.AudioSelection import AudioSelection
-				self.session.openWithCallback(self.audioSelected, AudioSelection, infobar=self)
-			elif config.plugins.OPDBoot_yellowkey.list.value == '2':
-				global AUDIO
-				AUDIO = True
-				ToggleVideo()
-			elif config.plugins.OPDBoot_yellowkey.list.value == '3':
-				self.startTeletext()
-			else:
-				try:
-					self.startTimeshift()
-				except:
-					pass
-		else:
-			if config.plugins.OPDBoot_yellowkey.listLong.value == '0':
-				from Screens.AudioSelection import AudioSelection
-				self.session.openWithCallback(self.audioSelected, AudioSelection, infobar=self)
-			elif config.plugins.OPDBoot_yellowkey.listLong.value == '2':
-				global AUDIO
-				AUDIO = True
-				ToggleVideo()
-			elif config.plugins.OPDBoot_yellowkey.listLong.value == '3':
-				self.startTeletext()
-			else:
-				try:
-					self.startTimeshift()
-				except:
-					pass
-				
+			from Screens.AudioSelection import AudioSelection
+			self.session.openWithCallback(self.audioSelected, AudioSelection, infobar=self)
 	def audioSelection(self):
 		from Screens.AudioSelection import AudioSelection
 		self.session.openWithCallback(self.audioSelected, AudioSelection, infobar=self)

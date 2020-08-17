@@ -12,7 +12,7 @@ from sys import maxint
 
 
 config.hdmicec = ConfigSubsection()
-config.hdmicec.enabled = ConfigYesNo(default = False) # query from this value in hdmi_cec.cpp
+config.hdmicec.enabled = ConfigYesNo(default = True) # query from this value in hdmi_cec.cpp
 config.hdmicec.control_tv_standby = ConfigYesNo(default = True)
 config.hdmicec.control_tv_wakeup = ConfigYesNo(default = True)
 config.hdmicec.report_active_source = ConfigYesNo(default = True)

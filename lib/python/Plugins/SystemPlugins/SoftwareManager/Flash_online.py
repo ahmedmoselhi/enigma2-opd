@@ -1,4 +1,3 @@
-from Plugins.Extensions.OPDBoot.plugin import *
 from Components.config import config
 from Components.Label import Label
 from Components.Button import Button

@@ -15,6 +15,7 @@ from Tools.HardwareInfo import HardwareInfo
 from boxbranding import getBoxType, getDisplayType
 from keyids import KEYIDS
 from sys import maxint
+from gettext import ngettext
 import glob
 import os
 

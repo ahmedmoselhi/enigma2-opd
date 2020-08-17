@@ -14,9 +14,8 @@ def InitSetupDevices():
 		language.activateLanguage(configElement.value)
 
 	config.osd = ConfigSubsection()
-	config.osd.language = ConfigText(default = "it_IT")
+	config.osd.language = ConfigText(default="en_EN")	
 	config.osd.language.addNotifier(languageNotifier)
-
 	config.parental = ConfigSubsection()
 	config.parental.lock = ConfigOnOff(default=False)
 	config.parental.setuplock = ConfigOnOff(default=False)
